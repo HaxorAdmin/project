@@ -10,14 +10,13 @@ ConnWatch helps you understand which addresses respond on your network, which se
 
 ## Download and run
 
-**[Download version 3.0.0 from GitHub Releases](https://github.com/HaxorAdmin/project/releases/tag/v3.0.0)**. The release includes a Windows installer, portable Windows package, Kali/Linux source, presentation PDF and matching checksums.
+**[Download version 3.0.0 from GitHub Releases](https://github.com/HaxorAdmin/project/releases/tag/v3.0.0)**. The release includes a Windows installer, portable Windows package, Kali/Linux source and matching checksums.
 
 | Package | Choose this when | Instructions |
 | --- | --- | --- |
 | [Windows setup EXE](https://github.com/HaxorAdmin/project/releases/download/v3.0.0/ConnWatch-Network-Setup-3.0.0.exe) | You want an installed application and Start menu/desktop shortcuts | [Windows setup guide](docs/INSTALL-WINDOWS.md) |
 | [Windows portable ZIP](https://github.com/HaxorAdmin/project/releases/download/v3.0.0/ConnWatch-Network-Windows-3.0.0.zip) | You want to run from an extracted folder | [Portable setup](docs/INSTALL-WINDOWS.md#portable-edition) |
 | [Kali/Linux and complete source ZIP](https://github.com/HaxorAdmin/project/releases/download/v3.0.0/ConnWatch-Network-Source-Kali-3.0.0.zip) | You use Linux or want to inspect and edit the source | [Kali/Linux guide](docs/INSTALL-KALI.md) |
-| [Presentation PDF](docs/ConnWatch-Network-Presentation.pdf) | You want the project overview and presentation | Open or download the PDF |
 | [SHA-256 checksums](https://github.com/HaxorAdmin/project/releases/download/v3.0.0/SHA256SUMS.txt) | You want to compare downloaded bytes | [Integrity checks](docs/INSTALL-WINDOWS.md#check-download-integrity) |
 
 Open the release page and select the required file under **Assets**. Windows packages include their Python/Qt runtime. The source edition requires Python 3.10+ and a graphical desktop. This is an **unsigned development release**; native Windows acceptance testing remains outstanding. See [validation](docs/VALIDATION.md) and [troubleshooting](docs/TROUBLESHOOTING.md).

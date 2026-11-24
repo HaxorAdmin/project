@@ -19,6 +19,14 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+      - name: Remove presentation release asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          asset_id=$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/v3.0.0" --jq '.assets[] | select(.name == "ConnWatch-Network-Presentation.pdf") | .id')
+          if [ -n "$asset_id" ]; then
+            gh api --method DELETE "repos/$GITHUB_REPOSITORY/releases/assets/$asset_id"
+          fi
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -51,9 +59,8 @@ jobs:
           cp build/ConnWatch-Network-Setup-3.0.0.exe build/release/
           cp build/windows-payload.zip build/release/ConnWatch-Network-Windows-3.0.0.zip
           git archive --format=zip --prefix=ConnWatch-Network/ HEAD -o build/release/ConnWatch-Network-Source-Kali-3.0.0.zip
-          cp docs/ConnWatch-Network-Presentation.pdf build/release/
           cd build/release
-          sha256sum *.exe *.zip *.pdf > SHA256SUMS.txt
+          sha256sum *.exe *.zip > SHA256SUMS.txt
       - name: Publish unsigned development release
         env:
           GH_TOKEN: ${{ github.token }}
@@ -61,11 +68,11 @@ jobs:
           cat > build/release-notes.md <<'NOTES'
           ConnWatch Network 3.0.0 — Developed by ZakirUllah.
 
-          Includes the Windows setup EXE, portable ZIP, complete Kali/Linux source, presentation PDF and SHA-256 checksums.
+          Includes the Windows setup EXE, portable ZIP, complete Kali/Linux source and SHA-256 checksums.
 
           This is an unsigned development release. Windows packages are cross-compiled and packaged from this commit; native Windows installation and real-LAN acceptance remain outstanding. Linux verification is documented in docs/PUBLICATION-CHECKS.md. Only assess networks you own or are authorized to scan.
 
-          See the repository README for features, Windows installation, Kali setup and troubleshooting. Release checksums apply to these newly built release assets; repository downloads/SHA256SUMS.txt records the earlier supplied Windows packages.
+          See the repository README for features, Windows installation, Kali setup and troubleshooting. Release checksums apply to these newly built release assets. The presentation has been removed from the distributed packages.
           NOTES
-          gh release create v3.0.0 --target "$GITHUB_SHA" --title "ConnWatch Network 3.0.0" --notes-file build/release-notes.md --prerelease --draft build/release/*
-          gh release edit v3.0.0 --draft=false
+          gh release upload v3.0.0 build/release/* --clobber
+          gh release edit v3.0.0 --notes-file build/release-notes.md --prerelease
