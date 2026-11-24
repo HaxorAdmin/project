@@ -1,0 +1,23 @@
+{
+  "scope": "owned loopback 127.0.0.1/32",
+  "production_scope_override": "test harness only; not a production control",
+  "runs": [
+    {
+      "status": "Completed",
+      "records": 1,
+      "observed_tcp_state": "Open"
+    },
+    {
+      "status": "Completed",
+      "records": 1,
+      "observed_tcp_state": "Open"
+    },
+    {
+      "status": "Completed",
+      "records": 1,
+      "observed_tcp_state": "Refused"
+    }
+  ],
+  "errors": [],
+  "network_neighbors_scanned": 0
+}

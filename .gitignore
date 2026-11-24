@@ -1,0 +1,25 @@
+# Generated environments and build inputs
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+build/
+dist/
+runtime/
+scripts/windows/*/rsrc.syso
+scripts/windows/setup/payload.zip
+# User workspaces and sensitive local configuration
+*.db
+*.db-*
+*.sqlite*
+*.log
+*.lock
+network-settings.ini
+.env
+.env.*
+!.env.example
+reports/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
