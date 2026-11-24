@@ -82,7 +82,7 @@ Offscreen mode is for diagnostics/tests. Launch normally for an interactive wind
 
 ## Download checksums
 
-Download all files named in the manifest into the same folder, then run:
+Download the source ZIP and `SHA256SUMS.txt` from the same GitHub Release into the same folder, then run:
 
 ```bash
 sha256sum --ignore-missing -c SHA256SUMS.txt

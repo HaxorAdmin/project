@@ -4,11 +4,11 @@ Developed by ZakirUllah · ConnWatch Network 3.0.0
 
 ## Windows binary availability
 
-The installer and portable ZIP were supplied separately. Their GitHub binary upload is pending. The source edition below is available in this repository.
+The installer and portable ZIP are now published in [GitHub Releases](https://github.com/HaxorAdmin/project/releases/tag/v3.0.0). Download the file from **Assets**. These are unsigned packages rebuilt from source by GitHub Actions.
 
 ## Setup edition
 
-1. Download `ConnWatch-Network-Setup-3.0.0.exe` from [downloads](../downloads).
+1. Download `ConnWatch-Network-Setup-3.0.0.exe` from [GitHub Releases](https://github.com/HaxorAdmin/project/releases/tag/v3.0.0).
 2. Close any earlier ConnWatch windows, including copies started from CMD.
 3. Run the setup executable normally. Do not extract the EXE with an archive utility.
 4. Complete the per-user installation and open the **ConnWatch Network** shortcut.
@@ -70,7 +70,7 @@ Get-FileHash .\ConnWatch-Network-Setup-3.0.0.exe -Algorithm SHA256
 Get-FileHash .\ConnWatch-Network-Windows-3.0.0.zip -Algorithm SHA256
 ```
 
-Compare the output with [SHA256SUMS.txt](../downloads/SHA256SUMS.txt). A matching hash confirms bytes match the published manifest; it is not a trusted publisher signature.
+Compare the output with [the checksum manifest from the same Release](https://github.com/HaxorAdmin/project/releases/download/v3.0.0/SHA256SUMS.txt). A matching hash confirms bytes match the published manifest; it is not a trusted publisher signature.
 
 ## Uninstall and records
 

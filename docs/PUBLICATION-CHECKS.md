@@ -11,3 +11,13 @@ Date: 2026-11-24
 - Native Windows installation and real-LAN discovery have not been verified in this publication environment. The Windows binaries remain unsigned.
 
 The checks above are local executed checks. They are not claims of a completed GitHub Actions run or native Windows acceptance.
+
+## GitHub release build
+
+The `Build Windows release` workflow completed successfully on 2026-11-24 using Ubuntu 22.04, Python 3.12 and Go 1.24.9. It obtained the pinned embedded Python/runtime wheels, cross-compiled the GUI launcher and installer, packaged the portable distribution, generated SHA-256 checksums and published all five release assets.
+
+Run: https://github.com/HaxorAdmin/project/actions/runs/45379575933
+
+Release: https://github.com/HaxorAdmin/project/releases/tag/v3.0.0
+
+This is a successful packaging/publication check, not a native Windows runtime or LAN acceptance test. GitHub-built Windows asset hashes differ from the original separately supplied packages; use the checksum file attached to the same Release.

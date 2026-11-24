@@ -10,17 +10,17 @@ ConnWatch helps you understand which addresses respond on your network, which se
 
 ## Download and run
 
-The complete editable source, Linux launcher, documentation and PDF are available here. Windows binary downloads are not yet hosted in this repository; their upload exceeded the current connector request window. Use your previously supplied Windows packages or run the source edition.
+**[Download version 3.0.0 from GitHub Releases](https://github.com/HaxorAdmin/project/releases/tag/v3.0.0)**. The release includes a Windows installer, portable Windows package, Kali/Linux source, presentation PDF and matching checksums.
 
 | Package | Choose this when | Instructions |
 | --- | --- | --- |
-| Windows setup EXE — upload pending | You want an installed application and Start menu/desktop shortcuts | [Windows setup guide](docs/INSTALL-WINDOWS.md) |
-| Windows portable ZIP — upload pending | You want to run from an extracted folder | [Portable setup](docs/INSTALL-WINDOWS.md#portable-edition) |
-| [Kali/Linux and complete source ZIP](downloads/ConnWatch-Network-Source-Kali-3.0.0.zip) | You use Linux or want to inspect and edit the source | [Kali/Linux guide](docs/INSTALL-KALI.md) |
+| [Windows setup EXE](https://github.com/HaxorAdmin/project/releases/download/v3.0.0/ConnWatch-Network-Setup-3.0.0.exe) | You want an installed application and Start menu/desktop shortcuts | [Windows setup guide](docs/INSTALL-WINDOWS.md) |
+| [Windows portable ZIP](https://github.com/HaxorAdmin/project/releases/download/v3.0.0/ConnWatch-Network-Windows-3.0.0.zip) | You want to run from an extracted folder | [Portable setup](docs/INSTALL-WINDOWS.md#portable-edition) |
+| [Kali/Linux and complete source ZIP](https://github.com/HaxorAdmin/project/releases/download/v3.0.0/ConnWatch-Network-Source-Kali-3.0.0.zip) | You use Linux or want to inspect and edit the source | [Kali/Linux guide](docs/INSTALL-KALI.md) |
 | [Presentation PDF](docs/ConnWatch-Network-Presentation.pdf) | You want the project overview and presentation | Open or download the PDF |
-| [SHA-256 checksums](downloads/SHA256SUMS.txt) | You want to compare downloaded bytes | [Integrity checks](docs/INSTALL-WINDOWS.md#check-download-integrity) |
+| [SHA-256 checksums](https://github.com/HaxorAdmin/project/releases/download/v3.0.0/SHA256SUMS.txt) | You want to compare downloaded bytes | [Integrity checks](docs/INSTALL-WINDOWS.md#check-download-integrity) |
 
-On GitHub, open a download file and use **Download raw file**. Windows packages include their Python/Qt runtime. The source edition requires Python 3.10+ and a graphical desktop. This is an **unsigned development release**; native Windows acceptance testing remains outstanding. See [validation](docs/VALIDATION.md) and [troubleshooting](docs/TROUBLESHOOTING.md).
+Open the release page and select the required file under **Assets**. Windows packages include their Python/Qt runtime. The source edition requires Python 3.10+ and a graphical desktop. This is an **unsigned development release**; native Windows acceptance testing remains outstanding. See [validation](docs/VALIDATION.md) and [troubleshooting](docs/TROUBLESHOOTING.md).
 
 ## Features
 
@@ -91,7 +91,7 @@ QT_QPA_PLATFORM=offscreen .venv/bin/python -m unittest discover -s tests -v
 QT_QPA_PLATFORM=offscreen .venv/bin/python main.py --data-dir /tmp/connwatch-check --self-check
 ```
 
-On Windows CMD, set `QT_QPA_PLATFORM=offscreen` first and use `.venv\Scripts\python.exe` with the same arguments. The self-check initializes the window/database and exits without sending scan probes. Linux verification for this publication is recorded in [publication checks](docs/PUBLICATION-CHECKS.md). A passing Linux suite does not establish native Windows acceptance.
+On Windows CMD, set `QT_QPA_PLATFORM=offscreen` first and use `.venv\Scripts\python.exe` with the same arguments. The self-check initializes the window/database and exits without sending scan probes. Linux verification for this publication is recorded in [publication checks](docs/PUBLICATION-CHECKS.md). The [Windows packaging workflow](.github/workflows/windows-release.yml) also completed successfully and published the unsigned release; it cross-compiles Windows packages and does not establish native Windows acceptance. A passing Linux suite does not establish native Windows acceptance.
 
 ## Data and licensing
 
